@@ -38,6 +38,17 @@ class Classe {
 ```
 #### Tipos
 No Haxe, os tipos das variáveis são inferidos ao atribuir um valor. Porém, é possível atribuir o tipo no momento da declaração da variável, como visto acima. Os tipos básicos são `Bool`, `Float`, `Int`, `String`.
+#### Operadores lógicos
+* Operador igual (`==`)
+* Operador e (`&&`)
+* Operador diferente (`!=`)
+* Operador negação (`!`)
+* Operador ou (`||`)
+#### Estrutura For
+
+```csharp
+
+```
 ## Sintaxe OO
 A sintaxe de orientação a objetos em Haxe é familiar aqueles que desenvolvem em C#, Java, PHP e outras linguagens similares.
 #### Classes
