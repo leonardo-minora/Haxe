@@ -230,6 +230,7 @@ Tomemos a função minhaFunc(). Ela tem:
 5. Pode ter um retorno (`return true`);
 ##### Sobrescrevendo métodos
 Quando em herança, é possível a sobrescrita de um método da classe superior pelo modificador de acesso `override` :
+
 ```csharp
 class Base {
   public function new() { }
