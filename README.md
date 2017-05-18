@@ -38,16 +38,107 @@ class Classe {
 ```
 #### Tipos
 No Haxe, os tipos das variáveis são inferidos ao atribuir um valor. Porém, é possível atribuir o tipo no momento da declaração da variável, como visto acima. Os tipos básicos são `Bool`, `Float`, `Int`, `String`.
+#### Arrays
+```csharp
+var a = new Array();
+a.push(1);
+a.push(2);
+a.push(3);
+```
+```csharp
+var a = [4, 5, 6];
+var b = [];
+b.push(1);
+b.push(2);
+b.push(3);
+```
+#### Objetos
+Similar a JSON
+```csharp
+// Declara o objeto
+var obj = {
+ chave1 : valor1,
+ chave2 : valor2,
+ chave3 : valor3,
+ chave4 : 'valor4'
+}
+// Acessar propriedades
+trace(obj.chave1);
+```
 #### Operadores lógicos
 * Operador igual (`==`)
 * Operador e (`&&`)
 * Operador diferente (`!=`)
 * Operador negação (`!`)
 * Operador ou (`||`)
-#### Estrutura For
-
+#### Estrutura while
 ```csharp
-
+while(condicao) {
+  expressao;
+}
+```
+#### Estrutura do-while
+```csharp
+do {
+  expressao;
+} while (condicao)
+```
+#### Estrutura for
+Aceita somente as seguintes estruturas, pode ser utilizado com `break`  e `continue`
+```csharp
+for(item in collection) { expressao }
+for(n in 0...10) { expressao } // De 0 a 9 
+```
+#### Estrutura if-else
+```csharp
+if {
+  expressao;
+} 
+else if (condicao) {
+  expressao;
+}
+else {
+  expressao;
+}
+```
+#### Estrutura switch
+```csharp
+switch var {
+  case caso1:
+    expressao-caso-1;
+  case caso2:
+    expressao-caso-2;
+  default:
+    expressao-default;
+}
+```
+#### Estrutura try-catch
+```csharp
+try { expressao try }
+catch ( var1 : Tipo ) { expressao catch }
+catch ( var2 : Tipo ) { expressao catch }
+```
+#### Estrutura break
+Utilizada para sair de loops
+```csharp
+while(true) {
+  expressao1;
+  if ( condicao ) break;
+  expressao2;
+}
+```
+#### Estrutura continue
+```csharp
+while(true) {
+  expressao1;
+  if ( condicao ) continue;
+  expressao2;
+}
+```
+#### Estrutura throw
+Permite o lançamento de qualquer expressão.
+```csharp
+throw { expressao };
 ```
 ## Sintaxe OO
 A sintaxe de orientação a objetos em Haxe é familiar aqueles que desenvolvem em C#, Java, PHP e outras linguagens similares.
@@ -167,3 +258,36 @@ Podem ser:
 2. `private`: O acesso é restrito a classe e a subclasses.
 ##### Especial
 Em Haxe, existe o modificador `inline`, que permite a escrita do código da função diretamente, ao invés de uma chamada para ela.
+Também existe o modificador `dynamic`, que assinala um método que pode ser modificado ao longo do código:
+```csharp
+class Main {
+  static dynamic function test() {
+    return "original";
+  }
+
+  static public function main() {
+    trace(test()); // original
+    test = function() { return "nova"; }
+    trace(test()); // nova
+  }
+}
+```
+#### Herança de classes
+```csharp
+class Ponto {
+  var x;
+  var y;
+  public function new(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+}
+class Imaginario extends Ponto {
+  var z;
+  public function new(x, y, z) {
+    super(x, y);
+    this.z = z;
+  }
+
+}
+```
